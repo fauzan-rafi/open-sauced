@@ -9,19 +9,15 @@ on:
 
 jobs:
 
-  checkout:
+  uniTest:
   
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout from Repository
-      uses: actions/checkout@v3
-  
-  unitTest:
-    runs-on: ubuntu-latest
-
+    
     timeout-minutes: 10
     
     steps:
+    - name: Checkout from Repository
+      uses: actions/checkout@v3
       
     - name: "Setup node"
       uses: actions/setup-node@v2.1.5
