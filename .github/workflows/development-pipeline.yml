@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 10
     
     steps:
-    - name: Checkout from Repository
+    - name: "Checkout from Repository"
       uses: actions/checkout@v3
       
     - name: "Setup node"
@@ -35,5 +35,20 @@ jobs:
     
     - name: "Lint the code"
       run: npm run lint --if-present
+      
+  BuildImage:
+   needs: unitTest
+   
+   runs-on: ubuntu-latest
+   
+   steps:
+#    - name: "Build Docker"
+#      uses: bitovi/github-actions-docker-publish@v1.0.7
+#      with:
+#       checkout: true
+    - name: "Build Image"
+      run: docker --version
+      
+  
     
       
