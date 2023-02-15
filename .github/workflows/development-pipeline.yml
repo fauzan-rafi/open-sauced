@@ -42,12 +42,15 @@ jobs:
    runs-on: ubuntu-latest
    
    steps:
-#    - name: "Build Docker"
-#      uses: bitovi/github-actions-docker-publish@v1.0.7
-#      with:
-#       checkout: true
-    - name: "Build Image"
-      run: docker --version
+   - name: "Build Docker"
+     uses: bitovi/github-actions-docker-publish@v1.0.7
+     with:
+      checkout: true
+      repository: fauzancloud/open-sauced
+      registry: hub.docker.com
+      login: $DOCKER_REGISTRY_USERNAME
+      password: $DOCKER_REGISTRY_PASSWORD
+      tags: alpha
       
   
     
