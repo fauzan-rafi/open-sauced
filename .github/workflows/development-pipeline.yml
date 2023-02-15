@@ -46,11 +46,10 @@ jobs:
      uses: bitovi/github-actions-docker-publish@v1.0.7
      with:
       checkout: true
-      repository: fauzancloud/open-sauced
-      registry: hub.docker.com
-      login: $DOCKER_REGISTRY_USERNAME
-      password: $DOCKER_REGISTRY_PASSWORD
-      tags: alpha
+      image_tag: alpha
+      repo_name: fauzancloud/open-sauced
+      docker_username: $DOCKER_REGISTRY_USERNAME
+      docker_password: $DOCKER_REGISTRY_PASSWORD
       
   
     
