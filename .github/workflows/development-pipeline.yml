@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  uniTest:
+  unitTest:
   
     runs-on: ubuntu-latest
     
