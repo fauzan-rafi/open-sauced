@@ -8,19 +8,20 @@ on:
     branches: [ "master" ]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
 
-#     strategy:
-#       matrix:
-#         node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+  checkout:
+  
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout from Repository
+      uses: actions/checkout@v3
+  
+  unitTest:
+    runs-on: ubuntu-latest
 
     timeout-minutes: 10
     
     steps:
-    - name: Checkout from Repository
-      uses: actions/checkout@v3
       
     - name: "Setup node"
       uses: actions/setup-node@v2.1.5
