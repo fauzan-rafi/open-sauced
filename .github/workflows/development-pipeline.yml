@@ -43,13 +43,16 @@ jobs:
    
    steps:
    - name: "Build Docker"
+     env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_REGISTRY_USERNAME}}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD}}
      uses: bitovi/github-actions-docker-publish@v1.0.7
      with:
       checkout: true
       image_tag: alpha
       repo_name: fauzancloud/open-sauced
-      docker_username: $DOCKER_REGISTRY_USERNAME
-      docker_password: $DOCKER_REGISTRY_PASSWORD
+      docker_username: $DOCKER_USERNAME
+      docker_password: $DOCKER_PASSWORD
       
   
     
